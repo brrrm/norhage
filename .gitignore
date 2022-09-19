@@ -1,0 +1,17 @@
+/wp-config.php
+/*
+!/wp-content
+/wp-content/*
+/wp-content/plugins
+!/wp-content/themes
+/wp-content/themes/*
+
+!/*.ico
+!/*.png
+!/site.webmanifest
+!/wp-content/themes/mb-clean/
+!/wp-content/themes/mb-clean/*
+!/wp-content/themes/mb-clean/**/*
+.DS_Store
+/wordpress/wp-content/themes/mb-clean/.DS_Store
+!.gitignore
