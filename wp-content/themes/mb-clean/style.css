@@ -222,15 +222,16 @@ header .desktopmenu > ul > li > a:before{
 header .desktopmenu > ul > li > a:hover:before{
 	color: #8CC96D;
 }
-header .desktopmenu > ul > li> ul > li.menu-item-has-children > a{
-	background: url(img/icon.svg) no-repeat right center;
+header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
+	background-image: url(img/icon.svg);
+	background-repeat: no-repeat;
   background-size: auto 1em;
   background-position: 94% 50%;
 }
+
 header .desktopmenu ul li{
 	display: block;
 	position: relative;
-	border-bottom: 1px solid #8CC96D ;
 }
 
 header .desktopmenu ul li ul{
@@ -250,27 +251,37 @@ header .desktopmenu > ul:hover > li > ul{
 	top: auto;
 	left: auto;
 }
-header .desktopmenu > ul > li:hover a:hover{
+header .desktopmenu > ul > li > ul > li:hover a:hover{
 	color: #fff;
 }
 header .desktopmenu > ul > li:hover ul{
 	background-color: #DFF0D6;
-	border-top: 5px solid #8CC96D;
+}
+header .desktopmenu > ul > li:hover ul li:first-child,
+header .desktopmenu > ul > li:hover ul li:first-child:hover{
+		border-top: 5px solid #8CC96D;
 }
 header .desktopmenu ul > li > ul > li:hover{
 	position: static;
 	background-color: #8CC96D;
+	border-top: 5px solid #8CC96D;
 }
 header .desktopmenu ul > li > ul > li:hover > ul{
-	top: -5px;
+	top: 0;
 	left: 100%;
 	z-index: 2;
 	height: 100%;
 	background-color: #C4E3B4;
-	border-top: 5px solid #F0F0F0;
 }
 header .desktopmenu ul:hover > li:not(:hover) ul > li{
 	opacity: 0.2;
+}
+header .desktopmenu ul > li > ul > li{
+	padding: 0 1em;
+}
+header .desktopmenu ul > li > ul > li > a{
+	border-bottom: 1px solid #8CC96D;
+	padding: 1em 0;
 }
 header .desktopmenu ul > li:last-child > ul > li:hover > ul{
 	right: 100%;
