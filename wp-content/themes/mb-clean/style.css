@@ -227,32 +227,7 @@ header .desktopmenu > ul > li[class*='icon-'] > a:before{
   display: block;
 }
 
-
-/*
-header .desktopmenu > ul li .sub-menu{
-	background-color: #adff2fa3;
-	width: auto;
-	position: absolute;
-	right: 0;
-}
-header .desktopmenu > ul li:hover .sub-menu{
-	width: 100%;
-}
-header .desktopmenu > ul:hover li .sub-menu{
-	left: auto;
-}
-header .desktopmenu > ul .sub-menu li{
-	background-color: #ff00007a;
-	left: auto;
-	right: 0;
-	width: calc(100% / 6);
-}
-
-
-
-*/
-
-header .desktopmenu ul > li .sub-menu{
+/*header .desktopmenu ul > li .sub-menu{
 	background-color: red;
 	position: absolute;
 	width: calc(100% / 6);
@@ -275,8 +250,8 @@ header .desktopmenu ul li .sub-menu ul.sub-menu{
 	left: -99999em;
 	z-index: 1;
 	position: absolute;
-}
-
+}*/
+/*
 header .desktopmenu ul li .sub-menu li ul.sub-menu{
 	left: -999em;
 	width: 100%;
@@ -293,11 +268,69 @@ header .desktopmenu ul li .sub-menu li:hover ul.sub-menu{
 header .desktopmenu ul > li > .sub-menu li .sub-menu li{
 	background-color: paleturquoise;
 	z-index: 111;
-/*	width: calc(100% / 6);*/
+	width: calc(100% / 6);
 }
 header .desktopmenu ul > li > .sub-menu li .sub-menu li:hover {
 	background-color: green;
 }
+*/
+
+ul:not(:hover) li ul:hover li:not(:hover){
+opacity: 0.5;}
+header .desktopmenu ul{
+	position: relative;
+}
+header .desktopmenu ul li{
+	display: block;
+}
+header .desktopmenu ul li:hover{
+	background-color: purple;
+}
+
+
+header .desktopmenu ul li ul.sub-menu{
+	position: absolute;
+	top: 0;
+	left: -999em;
+	width: 100%;
+}
+header .desktopmenu ul li ul.sub-menu{
+	left: auto;
+}
+header .desktopmenu ul li ul > li ul.sub-menu{
+	position: absolute;
+	top: 0;
+	left: -999em;
+	width: 100%;
+}
+header .desktopmenu ul li ul > li:hover ul.sub-menu{
+	background-color: rosybrown;
+	left: 100%;
+	z-index: 2;
+	position: absolute;
+  display: block;
+  width: 500%;
+}
+header .desktopmenu ul li ul > li ul.sub-menu{
+	opacity: 0.5;
+}
+header .desktopmenu ul li ul > li ul.sub-menu li{
+	opacity: 1;
+	background-color: green;
+	width: calc(100% / 6);
+}
+
+header .desktopmenu ul > li ul.sub-menu {
+	position: absolute;
+	top: 7em;
+	width: calc(100% / 6);
+	background-color: khaki;
+	height: 50vh;
+}
+header .desktopmenu ul li:hover ul.sub-menu{
+	background-color: pink;
+}
+
 
 
 .mit-konto {
