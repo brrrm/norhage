@@ -179,25 +179,18 @@ header .logo img {
 
 /* Menus */
 header .desktopmenu ul{
-	padding-inline-start: 0;
 	font-size: 16px;
-}    
-header .desktopmenu ul li{
 	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
 }
 header .desktopmenu ul li a{
 	font-family: "Poppins", sans-serif;
-  text-transform: uppercase;
   line-height: 1.5em;
   padding: 1em;
   display: block;
 }
-
-
-
-
-
-
 
 /* Alleen de iconen bar */
 header .desktopmenu > ul {
@@ -206,20 +199,19 @@ header .desktopmenu > ul {
 	height: 100%;
 	width: 100%;
 	position: relative;
-	padding: 0;
-	background-color: red;
+	background-color: #fff;
+}
+header .desktopmenu ul{
+	position: relative;
 }
 header .desktopmenu > ul > li{
-	width: calc(100% / 6);
-	flex: auto 0 0;
-	height: 7em;
+	flex: calc(100% / 6) 0 0;
+	height: 100%;
 	text-align: center;
-	list-style: none;
 	padding: 1em 0 ;
 	background-color: green;
-	border: 1px solid red;
 }
-header .desktopmenu > ul > li[class*='icon-'] > a:before{
+header .desktopmenu > ul > li > a:before{
 	color: #e2e2e2;
  	font-size: 2em;
   cursor: pointer;
@@ -227,109 +219,40 @@ header .desktopmenu > ul > li[class*='icon-'] > a:before{
   display: block;
 }
 
-/*header .desktopmenu ul > li .sub-menu{
-	background-color: red;
-	position: absolute;
-	width: calc(100% / 6);
-	height: 50vh;
-	top: 7em;
-}
-header .desktopmenu ul > li .sub-menu:hover{
-	width: 100%;
-}
-header .desktopmenu ul > li > .sub-menu:hover li{
-	width: calc(100% / 6);
-	background-color: pink;
-}
-header .desktopmenu ul > li .sub-menu li:hover{
-	background-color: rosybrown;
-}
-header .desktopmenu ul li .sub-menu ul.sub-menu{
-	background-color: green;
-	width: calc(100% / 6);
-	left: -99999em;
-	z-index: 1;
-	position: absolute;
-}*/
-/*
-header .desktopmenu ul li .sub-menu li ul.sub-menu{
-	left: -999em;
-	width: 100%;
-	background-color: #adff2f9c;
-	position: absolute;
-	top: 0;
-}
-header .desktopmenu ul li .sub-menu li:hover ul.sub-menu{
-	left: auto;
-	top: 0;
-	width: ;
-	height: 100%;
-}
-header .desktopmenu ul > li > .sub-menu li .sub-menu li{
-	background-color: paleturquoise;
-	z-index: 111;
-	width: calc(100% / 6);
-}
-header .desktopmenu ul > li > .sub-menu li .sub-menu li:hover {
-	background-color: green;
-}
-*/
-
-ul:not(:hover) li ul:hover li:not(:hover){
-opacity: 0.5;}
-header .desktopmenu ul{
-	position: relative;
-}
 header .desktopmenu ul li{
 	display: block;
-}
-header .desktopmenu ul li:hover{
-	background-color: purple;
+	position: relative;
 }
 
-
-header .desktopmenu ul li ul.sub-menu{
+header .desktopmenu ul li ul{
 	position: absolute;
-	top: 0;
+	top: auto;
 	left: -999em;
 	width: 100%;
+	background-color: #fff;
 }
-header .desktopmenu ul li ul.sub-menu{
+header .desktopmenu > ul:hover > li{
+	height: auto;
+}
+header .desktopmenu > ul:hover > li > ul{
+	position: relative;
+	height: 100%;
+	top: auto;
 	left: auto;
 }
-header .desktopmenu ul li ul > li ul.sub-menu{
-	position: absolute;
-	top: 0;
-	left: -999em;
-	width: 100%;
+header .desktopmenu ul > li > ul > li:hover{
+	position: static;
 }
-header .desktopmenu ul li ul > li:hover ul.sub-menu{
-	background-color: rosybrown;
+header .desktopmenu ul > li > ul > li:hover > ul{
+	top: 0;
 	left: 100%;
 	z-index: 2;
-	position: absolute;
-  display: block;
-  width: 500%;
+	height: 100%;
 }
-header .desktopmenu ul li ul > li ul.sub-menu{
-	opacity: 0.5;
-}
-header .desktopmenu ul li ul > li ul.sub-menu li{
-	opacity: 1;
-	background-color: green;
-	width: calc(100% / 6);
+header .desktopmenu ul:hover > li:not(:hover) ul > li{
+	opacity: 0.2;
 }
 
-header .desktopmenu ul > li ul.sub-menu {
-	position: absolute;
-	top: 7em;
-	width: calc(100% / 6);
-	background-color: khaki;
-	height: 50vh;
-}
-header .desktopmenu ul li:hover ul.sub-menu{
-	background-color: pink;
-}
 
 
 
