@@ -173,113 +173,133 @@ header .logo {
 header .logo img {
 	max-height: 80px;
 }
+
+
+
+
 /* Menus */
-header .desktopmenu {
-	width: 100%;
-	display: inline-block;
-	float: left;
-	margin: 16px 0 32px;
-	border-top: 2px solid #d7d7d7;
-	border-bottom: 2px solid #d7d7d7;
+header .desktopmenu ul{
+	padding-inline-start: 0;
+	font-size: 16px;
+}    
+header .desktopmenu ul li{
+	list-style: none;
 }
-header .desktopmenu > ul {
-	display: block;
-	float: right;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
-	text-align: center;
-}
-header .desktopmenu ul > li {
-	display: inline-block;
-	float: left;
-	width: auto;
-	padding: 0;
-	margin: 0;
-}
-header .desktopmenu > ul > li {
-	padding: 35px 10px 20px 10px;
-	width: 16%;
-	text-align: center;
-	float: none;
-	cursor: pointer;
-}
-header .desktopmenu > ul > li[class*='icon-'] a {
-	font-size: 13px;
-	line-height: 16px;
-	font-weight: 500;
-	color: #1a1a1a;
+header .desktopmenu ul li a{
 	font-family: "Poppins", sans-serif;
-	text-align: center;
-	text-transform: uppercase;
-	display: inline-block;
-	float: left;
-	width: 100%;
-}
-header .desktopmenu > ul > li[class*='icon-']:hover a {
-	color: #000;
-}
-header .desktopmenu > ul > li[class*='icon-'] > a:before {
-	color: #e2e2e2;
-	font-size: 32px;
-	cursor: pointer;
-	margin-bottom: 20px;
-	display: inline-block;
-	width: 100%;
-}
-header .desktopmenu > ul > li[class*='icon-'] > a:hover:before, header .desktopmenu > ul > li[class*='icon-'].current-menu-item > a:before {
-	color: #71bf45;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  padding: 1em;
+  display: block;
 }
 
-header .desktopmenu ul > li > a, header .desktopmenu ul > li > a:focus {
 
-}
-header .desktopmenu ul > li > a:hover {
-	color: #ff0;
-}
-header .desktopmenu ul > li.menu-item-has-children > a {
+
+
+
+
+
+/* Alleen de iconen bar */
+header .desktopmenu > ul {
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
 	position: relative;
+	padding: 0;
+	background-color: red;
 }
-header .desktopmenu .sub-menu {
-	width: 332px;
-	display: none;
-	float: left;
-	padding: 0px;
-	background-color: #fff;
-	position: absolute;
-	margin-top: 75px;
-}
-header .desktopmenu ul > li.menu-item-has-children:hover .sub-menu {
-	display: block;
-}
-
-header .desktopmenu ul.sub-menu > li {
-	display: inline-block;
-	float: left;
-	width: 100%;
-}
-
-header .desktopmenu ul.sub-menu > li > a {
-	display: inline-block;
-	float: left;
-	width: 100%;
-	padding: 8px;
-	border-top: 1px solid #71bf45;
+header .desktopmenu > ul > li{
+	width: calc(100% / 6);
+	flex: auto 0 0;
+	height: 7em;
 	text-align: center;
-	color: #000;
-	font-weight: 700;
-	font-size: 13px;
-	background-color: #fff;
-	font-family: "Raleway", sans-serif;
-	line-height: 22px;
-	text-transform: uppercase;
-	letter-spacing: 0.7px;
+	list-style: none;
+	padding: 1em 0 ;
+	background-color: green;
+	border: 1px solid red;
 }
-header .desktopmenu ul.sub-menu > li > a:hover {
-	color: #fff;
-	background-color: #4a4945;
+header .desktopmenu > ul > li[class*='icon-'] > a:before{
+	color: #e2e2e2;
+ 	font-size: 2em;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+  display: block;
 }
+
+
+/*
+header .desktopmenu > ul li .sub-menu{
+	background-color: #adff2fa3;
+	width: auto;
+	position: absolute;
+	right: 0;
+}
+header .desktopmenu > ul li:hover .sub-menu{
+	width: 100%;
+}
+header .desktopmenu > ul:hover li .sub-menu{
+	left: auto;
+}
+header .desktopmenu > ul .sub-menu li{
+	background-color: #ff00007a;
+	left: auto;
+	right: 0;
+	width: calc(100% / 6);
+}
+
+
+
+*/
+
+header .desktopmenu ul > li .sub-menu{
+	background-color: red;
+	position: absolute;
+	width: calc(100% / 6);
+	height: 50vh;
+	top: 7em;
+}
+header .desktopmenu ul > li .sub-menu:hover{
+	width: 100%;
+}
+header .desktopmenu ul > li > .sub-menu:hover li{
+	width: calc(100% / 6);
+	background-color: pink;
+}
+header .desktopmenu ul > li .sub-menu li:hover{
+	background-color: rosybrown;
+}
+header .desktopmenu ul li .sub-menu ul.sub-menu{
+	background-color: green;
+	width: calc(100% / 6);
+	left: -99999em;
+	z-index: 1;
+	position: absolute;
+}
+
+header .desktopmenu ul li .sub-menu li ul.sub-menu{
+	left: -999em;
+	width: 100%;
+	background-color: #adff2f9c;
+	position: absolute;
+	top: 0;
+}
+header .desktopmenu ul li .sub-menu li:hover ul.sub-menu{
+	left: auto;
+	top: 0;
+	width: ;
+	height: 100%;
+}
+header .desktopmenu ul > li > .sub-menu li .sub-menu li{
+	background-color: paleturquoise;
+	z-index: 111;
+/*	width: calc(100% / 6);*/
+}
+header .desktopmenu ul > li > .sub-menu li .sub-menu li:hover {
+	background-color: green;
+}
+
+
 .mit-konto {
 	display: inline-block;
 	width: auto;
