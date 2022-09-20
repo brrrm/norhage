@@ -192,7 +192,8 @@ header .desktopmenu ul li a{
   display: block;
 }
 
-/* Alleen de iconen bar */
+
+
 header .desktopmenu > ul {
 	display: flex;
 	justify-content: space-between;
@@ -200,6 +201,7 @@ header .desktopmenu > ul {
 	width: 100%;
 	position: relative;
 	background-color: #fff;
+	
 }
 header .desktopmenu ul{
 	position: relative;
@@ -209,7 +211,6 @@ header .desktopmenu > ul > li{
 	height: 100%;
 	text-align: center;
 	padding: 1em 0 ;
-	background-color: green;
 }
 header .desktopmenu > ul > li > a:before{
 	color: #e2e2e2;
@@ -218,10 +219,18 @@ header .desktopmenu > ul > li > a:before{
   margin-bottom: 0.5em;
   display: block;
 }
-
+header .desktopmenu > ul > li > a:hover:before{
+	color: #8CC96D;
+}
+header .desktopmenu > ul > li> ul > li.menu-item-has-children > a{
+	background: url(img/icon.svg) no-repeat right center;
+  background-size: auto 1em;
+  background-position: 94% 50%;
+}
 header .desktopmenu ul li{
 	display: block;
 	position: relative;
+	border-bottom: 1px solid #8CC96D ;
 }
 
 header .desktopmenu ul li ul{
@@ -230,6 +239,7 @@ header .desktopmenu ul li ul{
 	left: -999em;
 	width: 100%;
 	background-color: #fff;
+	text-align: left;
 }
 header .desktopmenu > ul:hover > li{
 	height: auto;
@@ -240,19 +250,32 @@ header .desktopmenu > ul:hover > li > ul{
 	top: auto;
 	left: auto;
 }
+header .desktopmenu > ul > li:hover a:hover{
+	color: #fff;
+}
+header .desktopmenu > ul > li:hover ul{
+	background-color: #DFF0D6;
+	border-top: 5px solid #8CC96D;
+}
 header .desktopmenu ul > li > ul > li:hover{
 	position: static;
+	background-color: #8CC96D;
 }
 header .desktopmenu ul > li > ul > li:hover > ul{
-	top: 0;
+	top: -5px;
 	left: 100%;
 	z-index: 2;
 	height: 100%;
+	background-color: #C4E3B4;
+	border-top: 5px solid #F0F0F0;
 }
 header .desktopmenu ul:hover > li:not(:hover) ul > li{
 	opacity: 0.2;
 }
-
+header .desktopmenu ul > li:last-child > ul > li:hover > ul{
+	right: 100%;
+	left:  auto;
+}
 
 
 
