@@ -219,7 +219,7 @@ header .desktopmenu > ul > li > a:before{
   margin-bottom: 0.5em;
   display: block;
 }
-header .desktopmenu > ul > li > a:hover:before{
+header .desktopmenu > ul > li:hover > a:before{
 	color: #8CC96D;
 }
 header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
@@ -264,7 +264,6 @@ header .desktopmenu > ul > li:hover ul li:first-child:hover{
 header .desktopmenu ul > li > ul > li:hover{
 	position: static;
 	background-color: #8CC96D;
-	border-top: 5px solid #8CC96D;
 }
 header .desktopmenu ul > li > ul > li:hover > ul{
 	top: 0;
