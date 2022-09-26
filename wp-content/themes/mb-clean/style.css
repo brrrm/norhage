@@ -179,21 +179,12 @@ header .logo img {
 
 /* Menus */
 header .desktopmenu ul{
-	font-size: 16px;
+	font-size: 14px;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	position: relative;
 }
-header .desktopmenu ul li a{
-	font-family: "Poppins", sans-serif;
-  line-height: 1.5em;
-  padding: 1em;
-  display: block;
-}
-
-
-
 header .desktopmenu > ul {
 	display: flex;
 	justify-content: space-between;
@@ -201,16 +192,32 @@ header .desktopmenu > ul {
 	width: 100%;
 	position: relative;
 	background-color: #fff;
-	
 }
-header .desktopmenu ul{
+
+header .desktopmenu ul li{
+	display: block;
 	position: relative;
 }
 header .desktopmenu > ul > li{
 	flex: calc(100% / 6) 0 0;
 	height: 100%;
 	text-align: center;
-	padding: 1em 0 ;
+}
+header .desktopmenu > ul:hover > li{
+	height: auto;
+}
+
+header .desktopmenu ul li a{
+	font-family: "Poppins", sans-serif;
+  line-height: 1.5em;
+  padding: 1em;
+  display: block;
+}
+header .desktopmenu > ul > li > a{
+  border-bottom: 5px solid #e2e2e2;
+}
+header .desktopmenu > ul > li:hover > a{
+	border-bottom: 5px solid #8CC96D;
 }
 header .desktopmenu > ul > li > a:before{
 	color: #e2e2e2;
@@ -222,17 +229,6 @@ header .desktopmenu > ul > li > a:before{
 header .desktopmenu > ul > li:hover > a:before{
 	color: #8CC96D;
 }
-header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
-	background-image: url(img/icon.svg);
-	background-repeat: no-repeat;
-  background-size: auto 1em;
-  background-position: 94% 50%;
-}
-
-header .desktopmenu ul li{
-	display: block;
-	position: relative;
-}
 
 header .desktopmenu ul li ul{
 	position: absolute;
@@ -242,45 +238,45 @@ header .desktopmenu ul li ul{
 	background-color: #fff;
 	text-align: left;
 }
-header .desktopmenu > ul:hover > li{
-	height: auto;
-}
 header .desktopmenu > ul:hover > li > ul{
 	position: relative;
 	height: 100%;
 	top: auto;
 	left: auto;
 }
-header .desktopmenu > ul > li > ul > li:hover a:hover{
-	color: #fff;
-}
 header .desktopmenu > ul > li:hover ul{
 	background-color: #DFF0D6;
 }
-header .desktopmenu > ul > li:hover ul li:first-child,
-header .desktopmenu > ul > li:hover ul li:first-child:hover{
-		border-top: 5px solid #8CC96D;
-}
+
 header .desktopmenu ul > li > ul > li:hover{
 	position: static;
 	background-color: #8CC96D;
 }
+header .desktopmenu ul:hover > li:not(:hover) ul > li{
+	opacity: 0.2;
+}
+
+header .desktopmenu ul > li > ul > li > a{
+	border-bottom: 1px solid #8CC96D;
+	padding: 0.7em 0;
+  margin: 0 0.7em;
+}
+header .desktopmenu > ul > li > ul > li:hover a:hover{
+	color: #fff;
+}
+header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
+	background-image: url(img/icon.svg);
+	background-repeat: no-repeat;
+  background-size: auto 1em;
+  background-position: 94% 50%;
+}
+
 header .desktopmenu ul > li > ul > li:hover > ul{
 	top: 0;
 	left: 100%;
 	z-index: 2;
 	height: 100%;
 	background-color: #C4E3B4;
-}
-header .desktopmenu ul:hover > li:not(:hover) ul > li{
-	opacity: 0.2;
-}
-header .desktopmenu ul > li > ul > li{
-	padding: 0 1em;
-}
-header .desktopmenu ul > li > ul > li > a{
-	border-bottom: 1px solid #8CC96D;
-	padding: 1em 0;
 }
 header .desktopmenu ul > li:last-child > ul > li:hover > ul{
 	right: 100%;
