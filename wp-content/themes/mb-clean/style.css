@@ -206,7 +206,12 @@ header .desktopmenu > ul > li{
 header .desktopmenu > ul:hover > li{
 	height: auto;
 }
-
+header .desktopmenu > ul > li:nth-child(7),
+header .desktopmenu > ul > li:nth-child(8),
+header .desktopmenu > ul > li:nth-child(9),
+header .desktopmenu > ul > li:nth-child(10){
+	display: none;
+}
 header .desktopmenu ul li a{
 	font-family: "Poppins", sans-serif;
   line-height: 1.5em;
@@ -215,19 +220,6 @@ header .desktopmenu ul li a{
 }
 header .desktopmenu > ul > li > a{
   border-bottom: 5px solid #e2e2e2;
-}
-header .desktopmenu > ul > li:hover > a{
-	border-bottom: 5px solid #8CC96D;
-}
-header .desktopmenu > ul > li > a:before{
-	color: #e2e2e2;
- 	font-size: 2em;
-  cursor: pointer;
-  margin-bottom: 0.5em;
-  display: block;
-}
-header .desktopmenu > ul > li:hover > a:before{
-	color: #8CC96D;
 }
 
 header .desktopmenu ul li ul{
@@ -238,51 +230,166 @@ header .desktopmenu ul li ul{
 	background-color: #fff;
 	text-align: left;
 }
-header .desktopmenu > ul:hover > li > ul{
-	position: relative;
-	height: 100%;
-	top: auto;
-	left: auto;
-}
-header .desktopmenu > ul > li:hover ul{
-	background-color: #DFF0D6;
-}
-
-header .desktopmenu ul > li > ul > li:hover{
-	position: static;
-	background-color: #8CC96D;
-}
-header .desktopmenu ul:hover > li:not(:hover) ul > li{
-	opacity: 0.2;
-}
 
 header .desktopmenu ul > li > ul > li > a{
 	border-bottom: 1px solid #8CC96D;
 	padding: 0.7em 0;
   margin: 0 0.7em;
 }
-header .desktopmenu > ul > li > ul > li:hover a:hover{
-	color: #fff;
-}
+
 header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
 	background-image: url(img/icon.svg);
 	background-repeat: no-repeat;
   background-size: auto 1em;
   background-position: 94% 50%;
 }
-
-header .desktopmenu ul > li > ul > li:hover > ul{
-	top: 0;
-	left: 100%;
-	z-index: 2;
-	height: 100%;
-	background-color: #C4E3B4;
+#sandwitch {
+	display: none;
+	color: #000;
+	font-size: 27px;
+	float: right;
+	padding: 10px 2px;
+	cursor: pointer;
+	padding: 0 1em;
+/*	position: absolute;
+	right: 0;
+	top: 30px;
+	z-index: 1;*/
 }
-header .desktopmenu ul > li:last-child > ul > li:hover > ul{
-	right: 100%;
-	left:  auto;
+@media all and (min-width: 768px){
+	header .desktopmenu > ul > li:hover > a{
+		border-bottom: 5px solid #8CC96D;
+	}
+	header .desktopmenu > ul > li > a:before{
+		color: #e2e2e2;
+	 	font-size: 2em;
+	  cursor: pointer;
+	  margin-bottom: 0.5em;
+	  display: block;
+	}
+	header .desktopmenu > ul > li:hover > a:before{
+		color: #8CC96D;
+	}
+	header .desktopmenu > ul:hover > li > ul{
+		position: relative;
+		height: 100%;
+		top: auto;
+		left: auto;
+	}
+	header .desktopmenu > ul > li:hover ul{
+		background-color: #DFF0D6;
+	}
+	header .desktopmenu ul > li > ul > li:hover{
+		position: static;
+		background-color: #8CC96D;
+	}
+	header .desktopmenu ul:hover > li:not(:hover) ul > li{
+		opacity: 0.2;
+	}
+	header .desktopmenu > ul > li > ul > li:hover a:hover{
+		color: #fff;
+	}
+	header .desktopmenu ul > li > ul > li:hover > ul{
+		top: 0;
+		left: 100%;
+		z-index: 2;
+		height: 100%;
+		background-color: #C4E3B4;
+	}
+	header .desktopmenu ul > li:last-child > ul > li:hover > ul{
+		right: 100%;
+		left:  auto;
+	}
 }
 
+
+@media all and (max-width: 768px){
+	header .wrapper{
+		background: pink;
+    	display: flex;
+    	flex-wrap: wrap;
+    	align-items: center;
+    	justify-content: space-between;
+	}
+
+	header .wrapper .section{
+		flex: 80% 0 0;
+    	display: flex;
+    	justify-content: space-between;
+    	align-items: center;
+	}
+	header .wrapper .section .righthead {
+		margin-top: 0;
+	}
+
+	header .wrapper .hamburger-menu{
+		flex: auto 0 0;
+		font-size: 26px;
+		z-index: 5;
+		color: #000;
+		cursor: pointer;
+	}
+	header .wrapper .hamburger-menu #sandwitch{
+		background-color: grey;
+		padding: 1em;
+	}
+	header.active .wrapper .hamburger-menu #sandwitch{
+		display: none;
+	}
+	header .wrapper .hamburger-menu #menu-close{
+		background-color: red;
+		display: none;
+		padding: 1em;
+	}
+	header.active .wrapper .hamburger-menu #menu-close{
+		background-color: red;
+		display: flex;
+		z-index: 1;
+	}
+	header .desktopmenu{
+		flex: 100% 0 0;
+		position: absolute;
+		left: -999em;
+	}
+	header.active .desktopmenu{
+		left: 0;
+		right: 0;
+		top: 100%;
+	}
+	header .desktopmenu > ul{
+		display: block;
+	}
+		header .desktopmenu ul li ul{
+		left: 0;
+
+		position: relative;
+		height: auto;
+	}
+	header .desktopmenu > ul > li > a{
+		text-align: left;
+		border-bottom: 3px solid #8CC96D;
+		border-top: 3px solid #8CC96D;
+	}
+	header .desktopmenu > ul > li > a:before{
+		margin-right: 1em;
+	}
+
+	#sandwitch{
+		display: block;
+	}
+	header .desktopmenu > ul > li:nth-child(7),
+	header .desktopmenu > ul > li:nth-child(8),
+	header .desktopmenu > ul > li:nth-child(9),
+	header .desktopmenu > ul > li:nth-child(10){
+		display: block;
+	}
+	header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
+		background-position: rotatate(45deg);
+	}
+}
+
+
+ 
 
 
 .mit-konto {
@@ -2720,127 +2827,6 @@ p.about-us-header::after {
 }
 
 /*------------------------------------*\
- MOBILE MENU
- \*------------------------------------*/
-/* Sandwitch */
-#sandwitch {
-	display: none;
-	color: #000;
-	font-size: 27px;
-	float: right;
-	padding: 10px 2px;
-	cursor: pointer;
-}
-/* mobile menu */
-#mobilemenu {
-	display: block;
-	overflow-y: scroll;
-	position: fixed;
-	width: 100%;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	background: #fff;
-	z-index: 4;
-	box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
-	margin-top: -100vh;
-	height: 100vh;
-	padding-bottom: 10px;
-	transition: margin-top 0.3s linear 0s, height 0.3s linear 0s;
-	-webkit-transition: margin-top 0.3s linear 0s, height 0.3s linear 0s;
-}
-#mobilemenu.active {
-	margin-top: 0;
-	display: block;
-	/*height: auto;*/
-}
-#mobilemenu #menu-close {
-	position: absolute;
-	right: 32px;
-	top: 12px;
-	font-size: 26px;
-	z-index: 5;
-	color: #000;
-	cursor: pointer;
-}
-#mobilemenu .mobile-menu-container {
-	padding: 20px 32px 0;
-	width: calc(100% - 64px);
-	display: block;
-	float: left;
-	max-height: calc(100vh - 20px);
-}
-
-#mobilemenu ul {
-	margin: 0;
-	list-style-type: none;
-	padding: 0;
-}
-#mobilemenu ul li {
-	width: auto;
-	float: none;
-	margin-bottom: 8px;
-	text-align: left;
-}
-#mobilemenu ul li.page_item a, #mobilemenu ul li.menu-item a, #mobilemenu ul li.current_page_item > a {
-	display: block;
-	border: none;
-	padding: 12px 0;
-	color: #1e1e1e;
-	font-size: 15px;
-	font-weight: 600;
-	padding: 12px 0;
-	text-transform: none;
-	line-height: 17px;
-	letter-spacing: 0;
-	font-family: "Raleway", sans-serif;
-	background-color: transparent;
-}
-#mobilemenu ul li.current-menu-parent > a {
-	color: #71bf45;
-}
-
-#mobilemenu ul li.current-menu-item a {
-	color: #71bf45;
-}
-
-#mobilemenu ul.sub-menu li.menu-item a {
-	font-weight: 400;
-	margin-left: 25px;
-}
-
-.mobile-menu-container a:hover {
-	color: #71bf45;
-}
-.mobile-menu-container ul.sub-menu {
-	display: none;
-}
-/*.mobile-menu-container ul li.menu-item-has-children a{
- pointer-events: none;
- cursor:default;
- }*/
-.mobile-menu-container ul > li.menu-item-has-children.bounce ul {
-	display: block;
-}
-.mobile-menu-container ul > li.menu-item-has-children > a:after {
-	float: right;
-	font-family: "Font Awesome 5 Free";
-	font-weight: 900;
-	content: "\f078";
-	font-style: normal;
-	margin: 0px 0px 0px 10px;
-	text-decoration: none;
-}
-.mobile-menu-container ul > li.menu-item-has-children.bounce > a:after {
-	float: right;
-	font-family: "Font Awesome 5 Free";
-	font-weight: 900;
-	content: "\f053";
-	font-style: normal;
-	margin: 0px 0px 0px 10px;
-	text-decoration: none;
-}
-/*------------------------------------*\
  Slick slider
  \*------------------------------------*/
 
@@ -3444,30 +3430,12 @@ aside.sidebar + div.main-category-section ul.products li.product {
 }
 
 @media (max-width: 1052px) {
-	#sandwitch {
-		display: block;
-	}
-	.desktopsearch {
-		display: none;
-	}
-	.mobilesearch {
-		display: block;
-		float: left;
-		width: 100%;
-		margin-bottom: 32px;
-	}
-	header .desktopmenu {
-		display: none;
-	}
 	header .righthead .mit-konto {
 		display: none;
 	}
 
 	header .section {
 		width: calc(100% - 50px);
-	}
-	#sandwitch {
-		padding-top: 30px;
 	}
 
 	header .logo {
