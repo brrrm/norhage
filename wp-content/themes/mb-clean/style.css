@@ -178,6 +178,9 @@ header .logo img {
 
 
 /* Menus */
+header .wrapper .hamburger-menu{
+	display: none;
+}
 header .desktopmenu ul{
 	font-size: 14px;
 	list-style: none;
@@ -206,12 +209,7 @@ header .desktopmenu > ul > li{
 header .desktopmenu > ul:hover > li{
 	height: auto;
 }
-header .desktopmenu > ul > li:nth-child(7),
-header .desktopmenu > ul > li:nth-child(8),
-header .desktopmenu > ul > li:nth-child(9),
-header .desktopmenu > ul > li:nth-child(10){
-	display: none;
-}
+
 header .desktopmenu ul li a{
 	font-family: "Poppins", sans-serif;
   line-height: 1.5em;
@@ -231,45 +229,48 @@ header .desktopmenu ul li ul{
 	text-align: left;
 }
 
-header .desktopmenu ul > li > ul > li > a{
+header .desktopmenu ul > li > ul > li:not(:last-child) > a{
 	border-bottom: 1px solid #8CC96D;
 	padding: 0.7em 0;
-  margin: 0 0.7em;
+ 	margin: 0 0.7em;
 }
 
 header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
 	background-image: url(img/icon.svg);
 	background-repeat: no-repeat;
-  background-size: auto 1em;
-  background-position: 94% 50%;
+  	background-size: auto 1em;
+	background-position: 94% 50%;
+}
+header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li {
+	padding: 0 2em;
+}
+header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
+	border-color: #dddddd;
 }
 #sandwitch {
 	display: none;
-	color: #000;
-	font-size: 27px;
-	float: right;
-	padding: 10px 2px;
-	cursor: pointer;
-	padding: 0 1em;
-/*	position: absolute;
-	right: 0;
-	top: 30px;
-	z-index: 1;*/
 }
-@media all and (min-width: 768px){
+@media all and (min-width: 1020px){
+	header .desktopmenu > ul > li:nth-child(7),
+	header .desktopmenu > ul > li:nth-child(8),
+	header .desktopmenu > ul > li:nth-child(9),
+	header .desktopmenu > ul > li:nth-child(10){
+		display: none;
+	}
 	header .desktopmenu > ul > li:hover > a{
 		border-bottom: 5px solid #8CC96D;
 	}
 	header .desktopmenu > ul > li > a:before{
 		color: #e2e2e2;
 	 	font-size: 2em;
-	  cursor: pointer;
-	  margin-bottom: 0.5em;
-	  display: block;
+		cursor: pointer;
+		margin-bottom: 0.5em;
+		display: block;
 	}
 	header .desktopmenu > ul > li:hover > a:before{
 		color: #8CC96D;
 	}
+
 	header .desktopmenu > ul:hover > li > ul{
 		position: relative;
 		height: 100%;
@@ -296,20 +297,20 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
 		height: 100%;
 		background-color: #C4E3B4;
 	}
-	header .desktopmenu ul > li:last-child > ul > li:hover > ul{
+	header .desktopmenu > ul > li:nth-child(6) > ul > li:hover > ul{
 		right: 100%;
 		left:  auto;
-	}
+	} 
 }
 
 
-@media all and (max-width: 768px){
+@media all and (max-width: 1020px){
 	header .wrapper{
-		background: pink;
     	display: flex;
     	flex-wrap: wrap;
     	align-items: center;
     	justify-content: space-between;
+		padding-bottom: 1em;
 	}
 
 	header .wrapper .section{
@@ -323,29 +324,31 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
 	}
 
 	header .wrapper .hamburger-menu{
+		display: block;
 		flex: auto 0 0;
-		font-size: 26px;
+		padding: 0.5em;
+		cursor: pointer;
+		font-size: 1.5em;
 		z-index: 5;
 		color: #000;
-		cursor: pointer;
 	}
 	header .wrapper .hamburger-menu #sandwitch{
-		background-color: grey;
-		padding: 1em;
+		display: block;
 	}
 	header.active .wrapper .hamburger-menu #sandwitch{
 		display: none;
 	}
 	header .wrapper .hamburger-menu #menu-close{
-		background-color: red;
 		display: none;
-		padding: 1em;
+	}
+	header .wrapper .hamburger-menu #menu-close .close-icon{
+		width: 1em;
+		height: 1em;
 	}
 	header.active .wrapper .hamburger-menu #menu-close{
-		background-color: red;
-		display: flex;
-		z-index: 1;
+		display: block;
 	}
+
 	header .desktopmenu{
 		flex: 100% 0 0;
 		position: absolute;
@@ -356,25 +359,11 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
 		right: 0;
 		top: 100%;
 	}
-	header .desktopmenu > ul{
-		display: block;
-	}
-		header .desktopmenu ul li ul{
+	header .desktopmenu ul li ul{
 		left: 0;
-
 		position: relative;
-		height: auto;
 	}
-	header .desktopmenu > ul > li > a{
-		text-align: left;
-		border-bottom: 3px solid #8CC96D;
-		border-top: 3px solid #8CC96D;
-	}
-	header .desktopmenu > ul > li > a:before{
-		margin-right: 1em;
-	}
-
-	#sandwitch{
+	header .desktopmenu > ul{
 		display: block;
 	}
 	header .desktopmenu > ul > li:nth-child(7),
@@ -383,8 +372,15 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
 	header .desktopmenu > ul > li:nth-child(10){
 		display: block;
 	}
-	header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
-		background-position: rotatate(45deg);
+	header .desktopmenu > ul > li > a{
+		text-align: left;
+		font-weight: 700;
+		color:  #8CC96D;
+		border-bottom: 3px solid #8CC96D;
+		/* border-top: 3px solid #8CC96D; */
+	}
+	header .desktopmenu > ul > li > a:before{
+		margin-right: 1em;
 	}
 }
 
