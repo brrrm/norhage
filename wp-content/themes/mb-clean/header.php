@@ -84,7 +84,7 @@ jQuery( document ).ready(function() {
 							<i class="fas fa-align-justify"></i>
 						</div>
 						<div id="menu-close">
-							<img src="/wp-content/themes/mb-clean/img/close.png" alt="close" class="close-icon"/>
+							<p></p>
 						</div>
 					</div>
 					<!-- nav -->
