@@ -212,7 +212,7 @@ header .desktopmenu ul li.menu-item-has-children button{
 	height: 2em;
 	display: block;
 	border: none;
-	background: transparent url('img/icon.svg') center no-repeat;
+	background: transparent url('img/icon-green.svg') center no-repeat;
 	background-size: 50%;
 	text-indent: -999em;
 	overflow: hidden;
@@ -333,14 +333,14 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 @media all and (max-width: 1020px){
 	header .wrapper{
     	display: flex;
-    	flex-wrap: wrap;
+    	flex-wrap: nowrap;
     	align-items: center;
     	justify-content: space-between;
 		padding-bottom: 1em;
 	}
 
 	header .wrapper .section{
-		flex: 80% 0 0;
+		flex: 90% 0 0;
     	display: flex;
     	justify-content: space-between;
     	align-items: center;
@@ -411,9 +411,6 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 }
 
 
- 
-
-
 .mit-konto {
 	display: inline-block;
 	width: auto;
@@ -461,18 +458,29 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 	width: auto;
 	display: inline-block;
 }
+
 .header-search-box {
 	display: block;
 	float: right;
 	width: auto;
 	margin-right: 26px;
 }
-.header-search-box .search-field {
-	border: none;
-	border-bottom: 1px solid #000;
-	font-size: 14px;
+.header-search-box form{
+	display: flex;
+	align-items: baseline;
+	justify-content: space-around;
+	position: relative;
 }
-.header-search-box button {
+.header-search-box form input{
+	flex: 100% 0 0;
+	border: none;
+	border-bottom: 3px solid #DFF0D6;
+	font-size: 14px;
+	height: 2em;
+}
+.header-search-box form button{
+	position: absolute;
+	right: 0;
 	border: none;
 	background-color: transparent;
 	padding-left: 0;
@@ -480,6 +488,23 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 .header-search-box button:hover {
 	color: #71bf45;
 }
+@media all and (max-width:768px){
+	.header-search-box{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		width: 100%;
+	}
+	.mainpage{
+		margin-top: 1.5em;  /*Door de searchbar die position absolute heeft, krijgt dit element margin*/
+	}
+}
+
+
+
+
+
 /*FRONT PAGE */
 .centerh {
 	text-align: center;
