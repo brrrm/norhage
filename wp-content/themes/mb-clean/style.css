@@ -201,6 +201,38 @@ header .desktopmenu ul li{
 	display: block;
 	position: relative;
 }
+header .desktopmenu ul li.menu-item-has-children{
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+header .desktopmenu ul li.menu-item-has-children button{
+	flex: 2em 0 0;
+	height: 2em;
+	display: block;
+	border: none;
+	background: transparent url('img/icon.svg') center no-repeat;
+	background-size: 50%;
+	text-indent: -999em;
+	overflow: hidden;
+	transition: transform 0.3s ease;
+}
+header .desktopmenu ul li.menu-item-has-children.open > button{
+	transform: rotate(90deg);
+}
+header .desktopmenu ul li.menu-item-has-children > a{
+	flex: auto 1 0;
+}
+header .desktopmenu ul li.menu-item-has-children > ul.sub-menu{
+	flex: 100% 0 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease;
+}
+header .desktopmenu ul li.menu-item-has-children.open > ul.sub-menu{
+	max-height: 1000px;
+}
 header .desktopmenu > ul > li{
 	flex: calc(100% / 6) 0 0;
 	height: 100%;
@@ -235,12 +267,6 @@ header .desktopmenu li ul{
 
 
 
-header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
-	background-image: url(img/icon.svg);
-	background-repeat: no-repeat;
-  	background-size: auto 1em;
-	background-position: 94% 50%;
-}
 header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li {
 	padding: 0 2em;
 }
