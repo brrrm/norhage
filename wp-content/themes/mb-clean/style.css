@@ -210,17 +210,21 @@ header .desktopmenu > ul:hover > li{
 	height: auto;
 }
 
-header .desktopmenu ul li a{
+header .desktopmenu li a{
 	font-family: "Poppins", sans-serif;
-  line-height: 1.5em;
-  padding: 1em;
-  display: block;
+  	line-height: 1.5em;
+  	padding: 1em;
+  	display: block;
+}
+header .desktopmenu li li a{
+	border-bottom: 1px solid #8CC96D;
+	padding: 0.7em 0;
+ 	margin: 0 0.7em;
 }
 header .desktopmenu > ul > li > a{
   border-bottom: 5px solid #e2e2e2;
 }
-
-header .desktopmenu ul li ul{
+header .desktopmenu li ul{
 	position: absolute;
 	top: auto;
 	left: -999em;
@@ -229,11 +233,7 @@ header .desktopmenu ul li ul{
 	text-align: left;
 }
 
-header .desktopmenu ul > li > ul > li:not(:last-child) > a{
-	border-bottom: 1px solid #8CC96D;
-	padding: 0.7em 0;
- 	margin: 0 0.7em;
-}
+
 
 header .desktopmenu > ul > li > ul > li.menu-item-has-children > a{
 	background-image: url(img/icon.svg);
