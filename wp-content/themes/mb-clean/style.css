@@ -201,11 +201,13 @@ header .desktopmenu ul li{
 	display: block;
 	position: relative;
 }
+
 header .desktopmenu ul li.menu-item-has-children{
 	display: flex;
 	flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+	border-bottom: 1px solid #8CC96D;
 }
 header .desktopmenu ul li.menu-item-has-children button{
 	flex: 2em 0 0;
@@ -244,17 +246,17 @@ header .desktopmenu > ul:hover > li{
 
 header .desktopmenu li a{
 	font-family: "Poppins", sans-serif;
-  	line-height: 1.5em;
-  	padding: 1em;
-  	display: block;
+	line-height: 1.5em;
+	padding: 1em;
+	display: block;
 }
-header .desktopmenu li li a{
+header .desktopmenu li li a{ 
 	border-bottom: 1px solid #8CC96D;
 	padding: 0.7em 0;
- 	margin: 0 0.7em;
+	margin: 0 0.7em;
 }
-header .desktopmenu > ul > li > a{
-  border-bottom: 5px solid #e2e2e2;
+header .desktopmenu > ul > li > a {
+	border-bottom: 5px solid #e2e2e2;
 }
 header .desktopmenu li ul{
 	position: absolute;
@@ -288,7 +290,7 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 	}
 	header .desktopmenu > ul > li > a:before{
 		color: #e2e2e2;
-	 	font-size: 2em;
+		font-size: 2em;
 		cursor: pointer;
 		margin-bottom: 0.5em;
 		display: block;
@@ -379,6 +381,8 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 		flex: 100% 0 0;
 		position: absolute;
 		left: -999em;
+		min-height: 100vh;
+		background-color: #fff;
 	}
 	header.active .desktopmenu{
 		left: 0;
@@ -392,6 +396,32 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 	header .desktopmenu > ul{
 		display: block;
 	}
+	header .desktopmenu li li a{
+		padding-left: 3em;
+	}
+	header .desktopmenu li li ul > li{
+		border-bottom: 1px solid #8CC96D;
+		background-color: #DFF0D6;
+	}
+	header .desktopmenu li ul > li.open{
+		background-color: #8CC96D;
+	}
+	header .desktopmenu li ul > li.open > a{
+		font-weight: 600;
+	}
+	header .desktopmenu ul ul > li.menu-item-has-children.open button{
+		background-image: url(img/icon.svg);
+	}
+	/* header .desktopmenu li li.open > a{
+		color: #8CC96D;
+		font-weight: 600;
+	} */
+	header .desktopmenu li li:last-child a{ 
+		border-bottom: 1px solid transparent;
+	}
+	header .desktopmenu > ul > li{
+		border-bottom: 3px solid #8CC96D;
+	}
 	header .desktopmenu > ul > li:nth-child(7),
 	header .desktopmenu > ul > li:nth-child(8),
 	header .desktopmenu > ul > li:nth-child(9),
@@ -402,8 +432,7 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 		text-align: left;
 		font-weight: 700;
 		color:  #8CC96D;
-		border-bottom: 3px solid #8CC96D;
-		/* border-top: 3px solid #8CC96D; */
+		border: none;
 	}
 	header .desktopmenu > ul > li > a:before{
 		margin-right: 1em;
