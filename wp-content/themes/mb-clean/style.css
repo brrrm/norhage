@@ -223,7 +223,6 @@ header .desktopmenu ul li.menu-item-has-children button{
 header .desktopmenu ul li.menu-item-has-children > a{
 	flex: auto 1 0;
 }
-
 header .desktopmenu > ul > li{
 	flex: calc(100% / 6) 0 0;
 	height: 100%;
@@ -407,6 +406,8 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 		overflow: hidden;
 		transition: max-height 0.3s ease;
 	}
+
+	
 	header .desktopmenu ul li.menu-item-has-children.open > ul.sub-menu{
 		max-height: 1000px;
 	}
@@ -514,6 +515,9 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 	border-bottom: 3px solid #DFF0D6;
 	font-size: 14px;
 	height: 2em;
+	padding-right: 2em;
+	padding-left: 0.5em;
+    box-sizing: border-box;
 }
 .header-search-box form button{
 	position: absolute;
