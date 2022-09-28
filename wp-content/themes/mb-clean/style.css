@@ -348,7 +348,6 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 		z-index: 5;
 		color: #000;
 		position: relative;
-		background-color: red;
 	}
 	header .wrapper .hamburger-menu #sandwitch{
 		display: block;
@@ -362,9 +361,6 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 		height: 1em;
 		background-image: url(img/close.svg);
 		background-repeat: no-repeat;
-	}
-	header .wrapper .hamburger-menu #menu-close p{
-		/* display: none; */
 	}
 	header.active .wrapper .hamburger-menu #menu-close{
 		display: block;
@@ -3807,7 +3803,7 @@ aside.sidebar + div.main-category-section ul.products li.product {
 	}
 	.mobilefilter {
 		display: block;
-		position: absolute;
+		position: absolute;r
 		right: 0;
 		margin-right: -40px;
 		background-color: #71bf45;
