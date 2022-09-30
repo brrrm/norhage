@@ -200,25 +200,38 @@ header .desktopmenu ul li{
 	display: block;
 	position: relative;
 }
-header .desktopmenu ul li.menu-item-has-children{
-	display: flex;
-	flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
 
 header .desktopmenu > ul > li.menu-item-has-children > button{
 	display: none;
 }
 header .desktopmenu ul li.menu-item-has-children button{
-	flex: 2em 0 0;
-	height: 2em;
 	border: none;
-	background: transparent url('img/icon-green.svg') center no-repeat;
-	background-size: 50%;
+	background: transparent;
+	background-size: auto 50%;
 	text-indent: -999em;
 	overflow: hidden;
 	transition: transform 0.3s ease;
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3.5em;
+}
+header .desktopmenu ul li.menu-item-has-children li button{
+	height: 3em;
+}
+header .desktopmenu ul li.menu-item-has-children button:after{
+	content: " ";
+	display: block;
+	background: transparent url('img/icon-green.svg') center no-repeat;
+	background-size: auto 50%;
+	transition: transform 0.3s ease;
+	position: absolute;
+	width: 3.5em;
+	height: 100%;
+	right: 0;
+	top: 0;
+	transform: rotate(90deg);
 }
 header .desktopmenu ul li.menu-item-has-children > a{
 	flex: auto 1 0;
@@ -421,13 +434,12 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 		/* margin-right: 1em; */
 		background-size:  30%;
 	}
-	header .desktopmenu ul ul > li.menu-item-has-children.open button{
+	header .desktopmenu ul ul > li.menu-item-has-children.open button:after{
 		background-image: url(img/icon.svg);
-		
 	}
 	
-	header .desktopmenu ul li.menu-item-has-children.open > button{
-		transform: rotate(90deg);
+	header .desktopmenu ul li.menu-item-has-children.open > button:after{
+		transform: rotate(180deg);
 	}
 	header .desktopmenu li li:last-child { 
 		border-bottom: 1px solid transparent;
