@@ -173,113 +173,282 @@ header .logo {
 header .logo img {
 	max-height: 80px;
 }
+
+
+
+
 /* Menus */
-header .desktopmenu {
-	width: 100%;
-	display: inline-block;
-	float: left;
-	margin: 16px 0 32px;
-	border-top: 2px solid #d7d7d7;
-	border-bottom: 2px solid #d7d7d7;
+header .wrapper .hamburger-menu{
+	display: none;
 }
-header .desktopmenu > ul {
-	display: block;
-	float: right;
-	width: 100%;
-	padding: 0;
+header .desktopmenu ul{
+	font-size: 14px;
+	list-style: none;
 	margin: 0;
-	list-style-type: none;
-	text-align: center;
-}
-header .desktopmenu ul > li {
-	display: inline-block;
-	float: left;
-	width: auto;
 	padding: 0;
-	margin: 0;
-}
-header .desktopmenu > ul > li {
-	padding: 35px 10px 20px 10px;
-	width: 16%;
-	text-align: center;
-	float: none;
-	cursor: pointer;
-}
-header .desktopmenu > ul > li[class*='icon-'] a {
-	font-size: 13px;
-	line-height: 16px;
-	font-weight: 500;
-	color: #1a1a1a;
-	font-family: "Poppins", sans-serif;
-	text-align: center;
-	text-transform: uppercase;
-	display: inline-block;
-	float: left;
-	width: 100%;
-}
-header .desktopmenu > ul > li[class*='icon-']:hover a {
-	color: #000;
-}
-header .desktopmenu > ul > li[class*='icon-'] > a:before {
-	color: #e2e2e2;
-	font-size: 32px;
-	cursor: pointer;
-	margin-bottom: 20px;
-	display: inline-block;
-	width: 100%;
-}
-header .desktopmenu > ul > li[class*='icon-'] > a:hover:before, header .desktopmenu > ul > li[class*='icon-'].current-menu-item > a:before {
-	color: #71bf45;
-}
-
-header .desktopmenu ul > li > a, header .desktopmenu ul > li > a:focus {
-
-}
-header .desktopmenu ul > li > a:hover {
-	color: #ff0;
-}
-header .desktopmenu ul > li.menu-item-has-children > a {
 	position: relative;
 }
-header .desktopmenu .sub-menu {
-	width: 332px;
-	display: none;
-	float: left;
-	padding: 0px;
+header .desktopmenu > ul {
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	position: relative;
 	background-color: #fff;
-	position: absolute;
-	margin-top: 75px;
 }
-header .desktopmenu ul > li.menu-item-has-children:hover .sub-menu {
+header .desktopmenu ul li{
+	display: block;
+	position: relative;
+}
+header .desktopmenu ul li.menu-item-has-children{
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .desktopmenu > ul > li.menu-item-has-children > button{
+	display: none;
+}
+header .desktopmenu ul li.menu-item-has-children button{
+	flex: 2em 0 0;
+	height: 2em;
+	border: none;
+	background: transparent url('img/icon-green.svg') center no-repeat;
+	background-size: 50%;
+	text-indent: -999em;
+	overflow: hidden;
+	transition: transform 0.3s ease;
+}
+header .desktopmenu ul li.menu-item-has-children > a{
+	flex: auto 1 0;
+}
+header .desktopmenu > ul > li{
+	flex: calc(100% / 6) 0 0;
+	height: 100%;
+	text-align: center;
+}
+header .desktopmenu > ul:hover > li{
+	height: auto;
+}
+header .desktopmenu li a{
+	font-family: "Poppins", sans-serif;
+	line-height: 1.5em;
+	padding: 1em;
 	display: block;
 }
-
-header .desktopmenu ul.sub-menu > li {
-	display: inline-block;
-	float: left;
-	width: 100%;
+header .desktopmenu ul ul li{
+	border-top: 1px solid #8CC96D;
 }
-
-header .desktopmenu ul.sub-menu > li > a {
-	display: inline-block;
-	float: left;
+header .desktopmenu li li a{ 
+	padding: 0.7em 0;
+	margin: 0 0.7em;
+}
+header .desktopmenu > ul > li > a {
+	border-bottom: 5px solid #e2e2e2;
+}
+header .desktopmenu li ul{
+	position: absolute;
+	top: auto;
+	left: -999em;
 	width: 100%;
-	padding: 8px;
-	border-top: 1px solid #71bf45;
-	text-align: center;
-	color: #000;
-	font-weight: 700;
-	font-size: 13px;
 	background-color: #fff;
-	font-family: "Raleway", sans-serif;
-	line-height: 22px;
-	text-transform: uppercase;
-	letter-spacing: 0.7px;
+	text-align: left;
 }
-header .desktopmenu ul.sub-menu > li > a:hover {
-	color: #fff;
-	background-color: #4a4945;
+header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
+	border-color: #dddddd;
 }
+#sandwitch {
+	display: none;
+}
+@media all and (min-width: 1020px){
+	header .desktopmenu > ul > li:nth-child(7),
+	header .desktopmenu > ul > li:nth-child(8),
+	header .desktopmenu > ul > li:nth-child(9),
+	header .desktopmenu > ul > li:nth-child(10){
+		display: none;
+	}
+	header .desktopmenu > ul > li:hover > a{
+		border-bottom: 5px solid #8CC96D;
+	}
+	header .desktopmenu > ul > li > a:before{
+		color: #e2e2e2;
+		font-size: 2em;
+		cursor: pointer;
+		margin-bottom: 0.5em;
+		display: block;
+	}
+	header .desktopmenu > ul > li:hover > a:before{
+		color: #8CC96D;
+	}
+	header .desktopmenu > ul:hover > li > ul{
+		position: relative;
+		height: 100%;
+		top: auto;
+		left: auto;
+	}
+	header .desktopmenu ul ul li.menu-item-has-children{
+		flex-wrap: nowrap;
+	}
+	header .desktopmenu ul ul li.menu-item-has-children > a{
+		flex: auto 0 1;
+	}
+	header .desktopmenu > ul > li:hover ul{
+		background-color: #DFF0D6;
+	}
+	header .desktopmenu ul > li > ul > li:hover{
+		position: static;
+		background-color: #8CC96D;
+	}
+	
+	header .desktopmenu ul:hover > li:not(:hover) ul > li{
+		opacity: 0.2;
+	}
+	header .desktopmenu > ul > li > ul > li:hover a:hover{
+		color: #fff;
+	}
+	header .desktopmenu ul > li > ul > li:hover > ul{
+		top: 0;
+		left: 100%;
+		z-index: 2;
+		height: 100%;
+		background-color: #C4E3B4;
+	}
+	header .desktopmenu > ul > li:nth-child(6) > ul > li:hover > ul{
+		right: 100%;
+		left:  auto;
+	} 
+
+}
+@media all and (max-width: 1020px){
+	header .wrapper{
+		width: 100%;
+    	display: flex;
+    	flex-wrap: nowrap;
+    	align-items: center;
+    	justify-content: space-between;
+		padding: 0 1em 0 1em;
+	}
+
+	header .wrapper .section{
+		flex: 90% 0 0;
+    	display: flex;
+    	justify-content: space-between;
+    	align-items: center;
+	}
+	header .wrapper .section .righthead {
+		margin-top: 0;
+	}
+
+	header .wrapper .hamburger-menu{
+		display: flex;
+		flex: 1em 0 0;
+		cursor: pointer;
+		
+		z-index: 5;
+		color: #000;
+		position: relative;
+	}
+	header .wrapper .hamburger-menu #sandwitch{
+		display: block;
+		font-size: 1.3em;
+	}
+	header.active .wrapper .hamburger-menu #sandwitch{
+		display: none;
+	}
+	header .wrapper .hamburger-menu #menu-close{
+		display: none;
+		width: 1em;
+		background-image: url(img/close.svg);
+		background-repeat: no-repeat;
+	}
+	header.active .wrapper .hamburger-menu #menu-close{
+		display: block;
+	}
+	header .desktopmenu{
+		flex: 100% 0 0;
+		position: absolute;
+		left: -999em;
+		min-height: 100vh;
+		background-color: #fff;
+    	padding: 1em;
+	}
+	header.active .desktopmenu{
+		left: 0;
+		right: 0;
+		top: 100%;
+	}
+	header .desktopmenu ul li ul{
+		left: 0;
+		position: relative;
+	}
+	header .desktopmenu > ul{
+		display: block;
+	}
+	header .desktopmenu li li a{
+		padding-left: 3em;
+	}
+	header .desktopmenu li li ul > li{
+		background-color: #DFF0D6;
+	}
+	header .desktopmenu li ul > li.open{
+		background-color: #8CC96D;
+	}
+	header .desktopmenu li ul > li.open > a{
+		font-weight: 600;
+	}
+	header .desktopmenu li li.open > ul{
+		border-bottom: 3px solid #8CC96D;
+	}
+	header .desktopmenu ul li.menu-item-has-children > ul.sub-menu{
+		flex: 100% 0 0;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+	}
+
+	
+	header .desktopmenu ul li.menu-item-has-children.open > ul.sub-menu{
+		max-height: 1000px;
+	}
+	header .desktopmenu > ul > li.menu-item-has-children > button{
+		display: block;
+	}
+	header .desktopmenu ul ul > li.menu-item-has-children button{
+		/* margin-right: 1em; */
+		background-size:  30%;
+	}
+	header .desktopmenu ul ul > li.menu-item-has-children.open button{
+		background-image: url(img/icon.svg);
+		
+	}
+	
+	header .desktopmenu ul li.menu-item-has-children.open > button{
+		transform: rotate(90deg);
+	}
+	header .desktopmenu li li:last-child { 
+		border-bottom: 1px solid transparent;
+	}
+	header .desktopmenu > ul > li{
+		border-bottom: 1px solid #8CC96D;
+	}
+	header .desktopmenu > ul > li:nth-child(7),
+	header .desktopmenu > ul > li:nth-child(8),
+	header .desktopmenu > ul > li:nth-child(9),
+	header .desktopmenu > ul > li:nth-child(10){
+		display: block;
+	}
+	header .desktopmenu > ul > li > a{
+		text-align: left;
+		font-weight: 700;
+		color:  #8CC96D;
+		border: none;
+	}
+	header .desktopmenu > ul > li > a:before{
+		margin-right: 1em;
+	}
+}
+
 .mit-konto {
 	display: inline-block;
 	width: auto;
@@ -327,18 +496,32 @@ header .desktopmenu ul.sub-menu > li > a:hover {
 	width: auto;
 	display: inline-block;
 }
+
 .header-search-box {
 	display: block;
 	float: right;
 	width: auto;
 	margin-right: 26px;
 }
-.header-search-box .search-field {
-	border: none;
-	border-bottom: 1px solid #000;
-	font-size: 14px;
+.header-search-box form{
+	display: flex;
+	align-items: baseline;
+	justify-content: space-around;
+	position: relative;
 }
-.header-search-box button {
+.header-search-box form input{
+	flex: 100% 0 0;
+	border: none;
+	border-bottom: 3px solid #DFF0D6;
+	font-size: 14px;
+	height: 2em;
+	padding-right: 2em;
+	padding-left: 0.5em;
+    box-sizing: border-box;
+}
+.header-search-box form button{
+	position: absolute;
+	right: 0;
 	border: none;
 	background-color: transparent;
 	padding-left: 0;
@@ -346,6 +529,26 @@ header .desktopmenu ul.sub-menu > li > a:hover {
 .header-search-box button:hover {
 	color: #71bf45;
 }
+@media all and (max-width:768px){
+	.header-search-box{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		width: 100%;
+		padding: 1em;
+		background-color: #fff;
+
+	}
+	.mainpage{
+		margin-top: 1.5em;  /*Door de searchbar die position absolute heeft, krijgt dit element margin*/
+	}
+}
+
+
+
+
+
 /*FRONT PAGE */
 .centerh {
 	text-align: center;
@@ -2715,127 +2918,6 @@ p.about-us-header::after {
 }
 
 /*------------------------------------*\
- MOBILE MENU
- \*------------------------------------*/
-/* Sandwitch */
-#sandwitch {
-	display: none;
-	color: #000;
-	font-size: 27px;
-	float: right;
-	padding: 10px 2px;
-	cursor: pointer;
-}
-/* mobile menu */
-#mobilemenu {
-	display: block;
-	overflow-y: scroll;
-	position: fixed;
-	width: 100%;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	background: #fff;
-	z-index: 4;
-	box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
-	margin-top: -100vh;
-	height: 100vh;
-	padding-bottom: 10px;
-	transition: margin-top 0.3s linear 0s, height 0.3s linear 0s;
-	-webkit-transition: margin-top 0.3s linear 0s, height 0.3s linear 0s;
-}
-#mobilemenu.active {
-	margin-top: 0;
-	display: block;
-	/*height: auto;*/
-}
-#mobilemenu #menu-close {
-	position: absolute;
-	right: 32px;
-	top: 12px;
-	font-size: 26px;
-	z-index: 5;
-	color: #000;
-	cursor: pointer;
-}
-#mobilemenu .mobile-menu-container {
-	padding: 20px 32px 0;
-	width: calc(100% - 64px);
-	display: block;
-	float: left;
-	max-height: calc(100vh - 20px);
-}
-
-#mobilemenu ul {
-	margin: 0;
-	list-style-type: none;
-	padding: 0;
-}
-#mobilemenu ul li {
-	width: auto;
-	float: none;
-	margin-bottom: 8px;
-	text-align: left;
-}
-#mobilemenu ul li.page_item a, #mobilemenu ul li.menu-item a, #mobilemenu ul li.current_page_item > a {
-	display: block;
-	border: none;
-	padding: 12px 0;
-	color: #1e1e1e;
-	font-size: 15px;
-	font-weight: 600;
-	padding: 12px 0;
-	text-transform: none;
-	line-height: 17px;
-	letter-spacing: 0;
-	font-family: "Raleway", sans-serif;
-	background-color: transparent;
-}
-#mobilemenu ul li.current-menu-parent > a {
-	color: #71bf45;
-}
-
-#mobilemenu ul li.current-menu-item a {
-	color: #71bf45;
-}
-
-#mobilemenu ul.sub-menu li.menu-item a {
-	font-weight: 400;
-	margin-left: 25px;
-}
-
-.mobile-menu-container a:hover {
-	color: #71bf45;
-}
-.mobile-menu-container ul.sub-menu {
-	display: none;
-}
-/*.mobile-menu-container ul li.menu-item-has-children a{
- pointer-events: none;
- cursor:default;
- }*/
-.mobile-menu-container ul > li.menu-item-has-children.bounce ul {
-	display: block;
-}
-.mobile-menu-container ul > li.menu-item-has-children > a:after {
-	float: right;
-	font-family: "Font Awesome 5 Free";
-	font-weight: 900;
-	content: "\f078";
-	font-style: normal;
-	margin: 0px 0px 0px 10px;
-	text-decoration: none;
-}
-.mobile-menu-container ul > li.menu-item-has-children.bounce > a:after {
-	float: right;
-	font-family: "Font Awesome 5 Free";
-	font-weight: 900;
-	content: "\f053";
-	font-style: normal;
-	margin: 0px 0px 0px 10px;
-	text-decoration: none;
-}
-/*------------------------------------*\
  Slick slider
  \*------------------------------------*/
 
@@ -3439,30 +3521,12 @@ aside.sidebar + div.main-category-section ul.products li.product {
 }
 
 @media (max-width: 1052px) {
-	#sandwitch {
-		display: block;
-	}
-	.desktopsearch {
-		display: none;
-	}
-	.mobilesearch {
-		display: block;
-		float: left;
-		width: 100%;
-		margin-bottom: 32px;
-	}
-	header .desktopmenu {
-		display: none;
-	}
 	header .righthead .mit-konto {
 		display: none;
 	}
 
 	header .section {
 		width: calc(100% - 50px);
-	}
-	#sandwitch {
-		padding-top: 30px;
 	}
 
 	header .logo {

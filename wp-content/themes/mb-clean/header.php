@@ -78,52 +78,29 @@ jQuery( document ).ready(function() {
 							</div>
 						</div>
 					</div>
-					
-					
-						
-						
-						<div class="botrow">
-							<!-- mobile nav -->
-							<div id="sandwitch" class="desktop-hidden">
-								<i class="fas fa-align-justify"></i>
-							</div>
-							<div id="mobilemenu" class="desktop-hidden mobilemenu">
-								<div class="mobile-menu-container">
-									<div id="menu-close">
-										<i class="fas fa-times"></i>
-									</div>
-									<div class="top-of-menu navigations">
-										<div class="header-search-box mobilesearch">
-										 	<?php get_product_search_form(); ?>
-										</div>
-										<nav>
-											<?php html5blank_nav_mobile(); ?>
-										</nav>
-									</div>
-								</div>
-							</div>
-							<!-- nav -->
-							<nav id="mainmenu" class="nav desktopmenu">
-								<?php html5blank_nav(); ?>
-							</nav>
-							
-							<!-- /nav -->
+					<!-- Hamburger menu-->
+					<div class="hamburger-menu">
+						<div id="sandwitch" class="desktop-hidden">
+							<i class="fas fa-align-justify"></i>
 						</div>
-						<!-- /mobile nav -->
-					
-					
-					
+						<div id="menu-close">
+							<p></p>
+						</div>
+					</div>
+					<!-- nav -->
+					<nav id="mainmenu" class="nav desktopmenu">
+						<?php html5blank_nav(); ?>
+						</nav>
 				</div>
 			</header>
-			<!-- /header -->
+
 				<script>
 					jQuery(document).ready(function() {
 						jQuery(document).on('click', '#sandwitch', function() {
-							jQuery("#mobilemenu").addClass("active");
+							jQuery("header").addClass("active");
 						});
-
 						jQuery(document).on('click', '#menu-close', function() {
-							jQuery("#mobilemenu").removeClass("active");
+							jQuery("header").removeClass("active");
 						});
 						jQuery(document).on('click', '.cart-contents > .eurofont.icon-cart ', function() {
 							jQuery("#menu-cart").addClass("active");

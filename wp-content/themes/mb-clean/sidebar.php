@@ -7,7 +7,7 @@
 			<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
 		</div>
 	</div>
-	<div class="mobilefilter"><i class="icofont-search"></i></div>
+	<!-- <div class="mobilefilter"><i class="icofont-search"></i></div> -->
 </aside>
 
 
