@@ -460,7 +460,9 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 		border: none;
 	}
 	header .desktopmenu > ul > li > a:before{
-		margin-right: 1em;
+		margin-right: .5em;
+		width: 2em;
+		display: inline-block;
 	}
 }
 
