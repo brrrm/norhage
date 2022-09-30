@@ -265,7 +265,10 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 	header .desktopmenu > ul > li:nth-child(7),
 	header .desktopmenu > ul > li:nth-child(8),
 	header .desktopmenu > ul > li:nth-child(9),
-	header .desktopmenu > ul > li:nth-child(10){
+	header .desktopmenu > ul > li:nth-child(10),
+	header .desktopmenu > ul > li:nth-child(11),
+	header .desktopmenu > ul > li:nth-child(12),
+	header .desktopmenu > ul > li:nth-child(13){
 		display: none;
 	}
 	header .desktopmenu > ul > li:hover > a{
