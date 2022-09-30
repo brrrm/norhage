@@ -97,7 +97,6 @@ jQuery( document ).ready(function() {
 				<script>
 					jQuery(document).ready(function() {
 						jQuery(document).on('click', '#sandwitch', function() {
-							console.log('hallo!!!!');
 							jQuery("header").addClass("active");
 						});
 						jQuery(document).on('click', '#menu-close', function() {
