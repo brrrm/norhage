@@ -368,6 +368,8 @@ header .desktopmenu > ul > li > ul > li.menu-item-has-children > ul  > li > a{
 	header .wrapper .hamburger-menu #sandwitch{
 		display: block;
 		font-size: 1.3em;
+		width: 2em;
+		text-align: center;
 	}
 	header.active .wrapper .hamburger-menu #sandwitch{
 		display: none;
