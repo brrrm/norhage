@@ -235,7 +235,7 @@ function html5blank_styles()
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
-    wp_register_style('html5blank', '/wp-content/themes/mb-clean/style.css', array(), '1.0', 'all');
+    wp_register_style('html5blank', '/wp-content/themes/mb-clean/style.css', array(), '1.1', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
 }
 
@@ -903,7 +903,7 @@ function add_custom_price( $cart_obj ) {
     foreach ( $cart_obj->get_cart() as $key => $value ) {
     	if(!empty($value['additionalProducts'])){
     		 $json = json_decode($value['additionalProducts'], true);
-			$price = $value['data']->get_regular_price();
+			$price = $value['data']->is_on_sale() ? $value['data']->get_sale_price() : $value['data']->get_regular_price();
     		foreach ($json as $item) {
             	if($item['quantity'] > 0){
                 $price +=  $item['quantity']*$item['price'];
@@ -916,7 +916,7 @@ function add_custom_price( $cart_obj ) {
         if(!empty($value['variationsA'])) {
             $json = json_decode($value['variationsA'], true);
             $sum = 0;
-			$price = $value['data']->get_regular_price();
+			$price = $value['data']->is_on_sale() ? $value['data']->get_sale_price() : $value['data']->get_regular_price();
 			$cutting_fee = get_field( "cutting_fee", $value['product_id']);
 			
             foreach ($json as $item) {
@@ -970,11 +970,11 @@ function add_cart_item_custom_data_vase( $cart_item_meta, $product_id  ) {
     if(isset($_POST['var'])) {
     	if(isset($_POST['variation_id'])){
     		$variable_product = wc_get_product($_POST['variation_id']);
-			$price = $variable_product->get_regular_price();
+			$price = $variable_product->is_on_sale() ? $variable_product->get_sale_price() : $variable_product->get_regular_price();
     	}else{
     		
 			$variable_product = wc_get_product($product_id);
-			$price = $variable_product->get_regular_price();
+			$price = $variable_product->is_on_sale() ? $variable_product->get_sale_price() : $variable_product->get_regular_price();
 			
     	}
 		
