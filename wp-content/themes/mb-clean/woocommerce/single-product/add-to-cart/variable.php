@@ -128,7 +128,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
                 var qty = 0;
 				 jQuery("body").on('change', "select", function () {
                 	jQuery(".chustomPrice").val("");
-                    current = jQuery('.woocommerce-variation-price .price .woocommerce-Price-amount.amount').text();
+                    current = jQuery('.woocommerce-variation-price .price .woocommerce-Price-amount.amount').last().text();
                     current = parseInt(current.replace(",", ""));
                     if(current > 0){
                     	 jQuery('.custom-woocommerce-variation-price').show();
@@ -154,12 +154,12 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
                             a += parseInt(jQuery(this).val());
                         });
                         if(isNaN(current)){
-                        	current = jQuery('.woocommerce-variation-price .price .woocommerce-Price-amount.amount').text();
+                        	current = jQuery('.woocommerce-variation-price .price .woocommerce-Price-amount.amount').last().text();
                    			 current = parseInt(current.replace(",", ""));
                         }
                         priceTotal = current + parseInt(a);
                         if(a == 0) { priceTotal = current; }
-                        jQuery('.woocommerce-variation-price .price .woocommerce-Price-amount.amount').text(addCommas(priceTotal.toFixed(2)))
+                        jQuery('.woocommerce-variation-price .price .woocommerce-Price-amount.amount').last().text(addCommas(priceTotal.toFixed(2)))
                     console.log(nmbr);
                   
 
