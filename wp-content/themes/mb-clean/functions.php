@@ -955,7 +955,7 @@ function add_cart_item_custom_data_vase( $cart_item_meta, $product_id  ) {
         $json = json_encode($newData);
 		
 		$variable_product = wc_get_product($_POST['variation_id']);
-		$price = $variable_product->get_regular_price();
+		$price = $variable_product->is_on_sale() ? $variable_product->get_sale_price() : $variable_product->get_regular_price();
     		foreach ($newData as $item) {
             	if($item['quantity'] > 0){
                 $price +=  $item['quantity']*$item['price'];
