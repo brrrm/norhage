@@ -159,7 +159,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
                         }
                         priceTotal = current + parseInt(a);
                         if(a == 0) { priceTotal = current; }
-                        jQuery('.woocommerce-variation-price .price .woocommerce-Price-amount.amount').last().text(addCommas(priceTotal.toFixed(2)))
+                        jQuery('.woocommerce-variation-price .price .woocommerce-Price-amount.amount').last().text(addCommas(priceTotal.toFixed(2)));
                     console.log(nmbr);
                   
 
